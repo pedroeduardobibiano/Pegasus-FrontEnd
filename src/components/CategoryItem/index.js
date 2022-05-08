@@ -1,11 +1,19 @@
 import React from 'react';
-import {Container, CategoryImage} from './styled'
+import {Container} from './styled'
 
-export default ({data})=>{
+export default ({data, activeCategory, setActiveCategory})=>{
+
+    const handleCategoryClick=()=>{
+        setActiveCategory(data.id);
+    }
+
     return(
-        <Container>
-            <CategoryImage src={data.image}/>
+        <Container 
+        active={activeCategory} 
+        id={data.id}
+        onClick={handleCategoryClick}
+        data-tip={data.name}
+        data-for='tip-top'>
         </Container>
-
     );
 }

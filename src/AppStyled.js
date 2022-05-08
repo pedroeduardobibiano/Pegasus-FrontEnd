@@ -21,4 +21,5 @@ export const PageBody = styled.div`
 display:flex;
 background-color: #D3D3D3;
 flex: 1;
+overflow-y: auto;
 `;

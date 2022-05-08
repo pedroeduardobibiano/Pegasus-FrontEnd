@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { Container, Logo, SearchInput } from './styled'
+import { Container, Logo, SearchInput, LogoName } from './styled'
 
 export default ({search, onSearch})=>{
 const[inputActive, setInputActive] =useState(false);
@@ -21,7 +21,7 @@ const handleChange=(e)=>{
 
     return(
         <Container>
-            <Logo src="/assets/logo.png"/>
+            <Logo src="/assets/Pegasus2.png"/>
             <SearchInput 
             type="text" 
             placeholder="Pesquise um produto..."

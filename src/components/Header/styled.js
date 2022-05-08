@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
     width: auto;
-    height: 70px;
+    height: 100px;
 `;
 
 export const SearchInput = styled.input`
