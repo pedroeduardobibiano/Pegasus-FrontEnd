@@ -1,31 +1,21 @@
-let BASE = 'http://localhost:8080';
+import axios from 'axios';
 
-export default {
-    getCategories: async()=>{
-        //GET / CATEGORIES
-        const res = await fetch(BASE +'/categories')
-        const json = await res.json();
+const BASE = 'http://localhost:8080';
 
-        console.log(json)
-        return json;
-    },
-    getProducts: async(category, page, search)=>{
-        // GET /products ([search, page, category])
-        let fields ={};
-        if(category !== 0){
-            fields.category = category;
-        }
-        if(page > 0){
-            fields.page = page;
-        }
-        if(search !==''){
-            fields.search = search;
-        }
+export const getCategories = async () => {
+    let result = [];
+    await axios.get(`${BASE}/categories`)
+        .then(response => {
+            result = response.data;
+        });
+    return result;
+}
 
-        let queryString = new URLSearchParams(fields).toString();
-
-        const res = await fetch(BASE +'/products/search?query='+queryString)
-        const json = await res.json();
-        return json;
-    }
-};
+export const getProducts = async () => {
+    let result = {};
+    await axios.get(`${BASE}/products`)
+    .then(response => {
+        result = {...response.data}
+    });
+    return result
+}

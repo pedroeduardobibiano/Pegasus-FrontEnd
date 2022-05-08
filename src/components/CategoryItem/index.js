@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from './styled'
+import { Container } from './styled'
 
 export default ({data, activeCategory, setActiveCategory})=>{
 
@@ -14,6 +14,7 @@ export default ({data, activeCategory, setActiveCategory})=>{
         onClick={handleCategoryClick}
         data-tip={data.name}
         data-for='tip-top'>
+            <p>{data.name}</p>
         </Container>
     );
 }

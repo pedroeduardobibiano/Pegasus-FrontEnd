@@ -11,26 +11,26 @@ import {
 
 } from './styled';
 
-export default ({data, onClick})=>{
+export default ({ data, onClick }) => {
 
-const handleClick =()=>{
-    onClick(data);
-}
+    const handleClick = () => {
+        onClick(data);
+    }
 
 
-    return(
+    return (
         <Container onClick={handleClick}>
             <ProductPhotoArea>
-                <ProductPhoto src={data.image}/>
+                <ProductPhoto src={data.imageUrl} />
             </ProductPhotoArea>
 
             <ProductInfoArea>
                 <ProductName>{data.name}</ProductName>
-                <ProductPrice> R${data.price}</ProductPrice>
+                <ProductPrice>R${data.price}</ProductPrice>
             </ProductInfoArea>
 
             <ProductButtonArea>
-                <ProcuctButton src="/assets/next.png"/>
+                <ProcuctButton src="/assets/next.png" />
             </ProductButtonArea>
         </Container>
     );
